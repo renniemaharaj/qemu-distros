@@ -5,7 +5,7 @@ set -e
 
 ISO="debian-13.1.0-amd64-netinst.iso"
 IMG="debian.img"
-BOOT="boot-debian.sh"
+BOOT="boot.sh"
 ISO_URL="https://cdimage.debian.org/cdimage/release/13.1.0/amd64/iso-cd/${ISO}"
 
 pkg update -y
@@ -30,11 +30,11 @@ qemu-system-x86_64 \
   -machine q35 \
   -m 2G \
   -smp cpus=2 \
-  -cdrom debian-12.3.0-amd64-netinst.iso \
+  -cdrom debian-13.1.0-amd64-netinst.iso \
   -hda debian.img \
   -boot d \
   -nographic
 EOF
 chmod +x "$BOOT"
 
-echo "[*] Done. Run ./boot-debian.sh to install Debian Server."
+echo "[*] Done. Run ./boot.sh to install Debian Server."

@@ -5,7 +5,7 @@ set -e
 
 ISO="alpine-virt-3.22.0-x86_64.iso"
 IMG="alpine.img"
-BOOT="boot-alpine.sh"
+BOOT="boot.sh"
 ISO_URL="https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/${ISO}"
 
 pkg update -y
@@ -37,4 +37,4 @@ qemu-system-x86_64 \
 EOF
 chmod +x "$BOOT"
 
-echo "[*] Done. Run ./boot-alpine.sh to install Alpine Linux."
+echo "[*] Done. Run ./boot.sh to install Alpine Linux."
