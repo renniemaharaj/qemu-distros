@@ -28,12 +28,14 @@ cat > "$BOOT" <<'EOF'
 #!/data/data/com.termux/files/usr/bin/bash
 qemu-system-x86_64 \
   -machine q35 \
+  -cpu host \
   -m 1G \
   -smp cpus=1 \
   -cdrom archlinux-x86_64.iso \
   -hda arch.img \
   -boot d \
-  -nographic
+  -nographic \
+  -serial mon:stdio
 EOF
 
 chmod +x "$BOOT"
